@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6706616264719674128}
   - component: {fileID: 6706616264719674131}
-  - component: {fileID: 5217619690274211572}
+  - component: {fileID: -2829964973037639572}
   m_Layer: 0
   m_Name: ObstacleBike
   m_TagString: Untagged
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6706616264719674130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 3.7, z: 0}
-  m_LocalScale: {x: 1.3474168, y: 1.4014493, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5217619690274211572
+--- !u!114 &-2829964973037639572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,5 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf17f8ae5910ec4e80263ca16023eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bikeWaypoint: []
+  obsWaypoints:
+  - {fileID: 398155268561723690, guid: 459ac31eed2b8544f99b32048addc6dc, type: 3}
+  - {fileID: 4727496103082064608, guid: 8eccc6c168c61944a9371229e86780fb, type: 3}
+  - {fileID: 597412063966390498, guid: b7f322fb3b88b184094587961e38c2da, type: 3}
   obsMoveSpeed: 2

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ObstaclesPathing : MonoBehaviour
 {
-    [SerializeField] List<Transform> bikeWaypoint;
+    [SerializeField] List<Transform> obsWaypoints;
     [SerializeField] float obsMoveSpeed = 2f;
 
-    int waypointIndex = 0; //saves the waypoint direction
+    int waypointIndex = 0 ; //saves the waypoint direction
 
     void Start()
     {
         //setting the start position for obstacle
-        transform.position = bikeWaypoint[waypointIndex].transform.position;
+        transform.position = obsWaypoints[waypointIndex].transform.position;
 
     }
 
