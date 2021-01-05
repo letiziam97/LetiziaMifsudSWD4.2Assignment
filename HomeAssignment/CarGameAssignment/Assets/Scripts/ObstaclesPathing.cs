@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstaclesPathing : MonoBehaviour
 {
     [SerializeField] List<Transform> obsWaypoints;
-    [SerializeField] float obsMoveSpeed = 2f;
+    [SerializeField] float ObsmoveSpeed = 2f;
 
     int waypointIndex = 0 ; //saves the waypoint direction
 
@@ -13,13 +13,43 @@ public class ObstaclesPathing : MonoBehaviour
     {
         //setting the start position for obstacle
         transform.position = obsWaypoints[waypointIndex].transform.position;
-
     }
 
 
     void Update()
     {
-        
+        ObsMove();
+    }
+
+
+    private void ObsMove()
+    {
+        if (waypointIndex <= obsWaypoints.Count - 1)
+        {
+            //setting the TargetPosition where we the obstacle wants to go.
+            var tarPos = obsWaypoints[waypointIndex].transform.position;
+
+            //z-axis = 0
+            tarPos.z = 0f;
+
+            //moving the obtacle through way points
+            var obsMovem = ObsmoveSpeed * Time.deltaTime;
+
+            //moving towards the way points
+            transform.position = Vector2.MoveTowards(transform.position, tarPos, obsMovem);
+
+            //when target waypoint is reached
+            if (transform.position == tarPos)
+
+            {
+                waypointIndex++;
+            }
+            //last waypoint is reached
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
     

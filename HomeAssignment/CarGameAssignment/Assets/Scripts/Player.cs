@@ -9,7 +9,7 @@ using UnityEngine.XR.WSA.Input;
 public class Player : MonoBehaviour
 {
     //creating variable without intialisation
-    float xMin, xMax, yMin, yMax;
+    float MinX, MaxX, MinY, MaxY;
 
     //This is a variable that can be edited from Unity
     [SerializeField] float movingSpeed = 1f;
@@ -36,12 +36,12 @@ public class Player : MonoBehaviour
 
         //setting up variable according to the camera therefore 
         //xMin = 0, xMax = 1
-        xMin = boundCam.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + pad;
-        xMax = boundCam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - pad;
+        MinX = boundCam.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + pad;
+        MaxX = boundCam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - pad;
 
         //yMin = 0, yMax = 0
-        yMin = boundCam.ViewportToWorldPoint(new Vector3(0, -4 , 0)).y + pad;
-        yMax = boundCam.ViewportToWorldPoint(new Vector3(0, -4, 0)).y - pad;
+        MinY = boundCam.ViewportToWorldPoint(new Vector3(0, -4 , 0)).y + pad;
+        MaxY = boundCam.ViewportToWorldPoint(new Vector3(0, -4, 0)).y - pad;
 
     }
 
@@ -53,10 +53,10 @@ public class Player : MonoBehaviour
 
         //current position of PlayerCar, + difference in X by keyboard input
         //Clamping the position - Clamps the min float and the max float values.
-        var newPosX = Mathf.Clamp(transform.position.x + movementX, xMin, xMax);
+        var newPosX = Mathf.Clamp(transform.position.x + movementX, MinX, MaxX);
 
 
-        //deltaY = so that the car does not move in the y axis ie up and down 
+        //movementY = so that the car does not move in the y axis ie up and down 
         float movementY = -4;
 
 
