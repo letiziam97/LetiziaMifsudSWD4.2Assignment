@@ -5,12 +5,11 @@ using UnityEngine;
 public class ObstaclesPathing : MonoBehaviour
 {
     [SerializeField] List<Transform> obsWaypoints;
-    [SerializeField] float ObsmoveSpeed = 2f;
 
     [SerializeField] WaveConfig waveconf;
 
 
-    int waypointIndex = 0 ; //saves the waypoint direction
+    int waypointIndex = 0; //saves the waypoint direction
 
     void Start()
     {
@@ -39,7 +38,7 @@ public class ObstaclesPathing : MonoBehaviour
             tarPos.z = 0f;
 
             //moving the obtacle through way points
-            var obsMovem = ObsmoveSpeed * Time.deltaTime;
+            var obsMovem = waveconf.GetobsMoveSpeed() * Time.deltaTime;
 
             //moving towards the way points
             transform.position = Vector2.MoveTowards(transform.position, tarPos, obsMovem);
@@ -56,6 +55,12 @@ public class ObstaclesPathing : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    //setting up a waveConfig
+    public void SetWaveCon(WaveConfig waveConfigSet)
+    {
+        waveconf = waveConfigSet;
     }
 }
     

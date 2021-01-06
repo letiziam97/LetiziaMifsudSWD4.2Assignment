@@ -94,9 +94,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf17f8ae5910ec4e80263ca16023eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsWaypoints:
-  - {fileID: 398155268561723690, guid: 459ac31eed2b8544f99b32048addc6dc, type: 3}
-  - {fileID: 4727496103082064608, guid: 8eccc6c168c61944a9371229e86780fb, type: 3}
-  - {fileID: 597412063966390498, guid: b7f322fb3b88b184094587961e38c2da, type: 3}
-  ObsmoveSpeed: 2
+  obsWaypoints: []
   waveconf: {fileID: 11400000, guid: 7d715ed7e86f9ae44bc5e3829e8f1423, type: 2}

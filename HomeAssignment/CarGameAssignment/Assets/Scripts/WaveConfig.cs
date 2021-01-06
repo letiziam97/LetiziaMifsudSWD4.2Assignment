@@ -52,14 +52,11 @@ public class WaveConfig : ScriptableObject
         return obsMoveSpeed;
     }
 
-
     void Start()
     {
         GetObsPrefab();
 
     }
-    
-   
 
     void Update()
     {

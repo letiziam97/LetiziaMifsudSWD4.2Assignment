@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c04248ecf1bb542bc10da660022d78, type: 3}
   m_Name: Wave1
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 6706616264719674130, guid: 430cbf20b69245a42a395b21a2464f50,
+  obstaclePrefab: {fileID: 3551755878596108295, guid: 67e681ff06c459f4f817a639209403fa,
     type: 3}
-  pathprefab: {fileID: 7144087073539560385, guid: c5d4b5a820895834595df38dc683b25e,
+  pathprefab: {fileID: 139351007345787523, guid: c5d4b5a820895834595df38dc683b25e,
     type: 3}
   timeSpawn: 1
   spawnRandFac: 0.3
-  numObs: 5
+  numObs: 3
   obsMoveSpeed: 2
