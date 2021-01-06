@@ -7,10 +7,16 @@ public class ObstaclesPathing : MonoBehaviour
     [SerializeField] List<Transform> obsWaypoints;
     [SerializeField] float ObsmoveSpeed = 2f;
 
+    [SerializeField] WaveConfig waveconf;
+
+
     int waypointIndex = 0 ; //saves the waypoint direction
 
     void Start()
     {
+        //getting the list of obswaypoints from waveconf
+        obsWaypoints = waveconf.GetWayPts();
+
         //setting the start position for obstacle
         transform.position = obsWaypoints[waypointIndex].transform.position;
     }
