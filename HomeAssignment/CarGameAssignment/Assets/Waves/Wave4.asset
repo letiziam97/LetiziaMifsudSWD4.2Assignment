@@ -18,5 +18,5 @@ MonoBehaviour:
     type: 3}
   timeSpawn: 1
   spawnRandFac: 0.3
-  numObs: 3
+  numObs: 8
   obsMoveSpeed: 2

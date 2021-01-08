@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5241443865112295781}
   - component: {fileID: 6118166360625391866}
+  - component: {fileID: -1350244322564599865}
   - component: {fileID: -1213689086927954675}
+  - component: {fileID: 3510211083127757323}
+  - component: {fileID: -2207913787812245484}
   m_Layer: 0
   m_Name: ObstacleAmb
   m_TagString: Untagged
@@ -82,6 +85,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1350244322564599865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865775744581423718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a45dccc5454eff4ba99097d076269fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  shotCnt: 0
+  minTimeBetShots: 0.2
+  maxTimeBetShots: 3
+  obsLaserPre: {fileID: 840614914153625593, guid: 625b03343cdd7464ca60c1d827bcbf03,
+    type: 3}
+  ObsLaserSpeed: 3
 --- !u!114 &-1213689086927954675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,3 +118,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obsWaypoints: []
   waveconf: {fileID: 0}
+--- !u!60 &3510211083127757323
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865775744581423718}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 1}
+    newSize: {x: 0.5, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.19, y: 0.5}
+      - {x: -0.24, y: 0.48}
+      - {x: -0.25, y: 0.13}
+      - {x: -0.25, y: -0.5}
+      - {x: 0.25, y: -0.5}
+      - {x: 0.25, y: 0.11}
+      - {x: 0.21, y: 0.5}
+--- !u!114 &-2207913787812245484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865775744581423718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a69077a709306489e0806d91fcef84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obsDamage: 5

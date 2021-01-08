@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1108679128735308338}
   - component: {fileID: 6248405186321819943}
   - component: {fileID: 7491446971885848133}
+  - component: {fileID: -6046982477387316338}
+  - component: {fileID: 7470312362121191700}
+  - component: {fileID: -9097481182583493249}
   m_Layer: 0
   m_Name: ObstacleBar
   m_TagString: Untagged
@@ -96,3 +99,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obsWaypoints: []
   waveconf: {fileID: 0}
+--- !u!114 &-6046982477387316338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842607640937874620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a45dccc5454eff4ba99097d076269fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  shotCnt: 0
+  minTimeBetShots: 0.2
+  maxTimeBetShots: 3
+  obsLaserPre: {fileID: 0}
+  ObsLaserSpeed: 0.3
+--- !u!60 &7470312362121191700
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842607640937874620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1, y: 0.62}
+    newSize: {x: 2.1, y: 0.62}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.05, y: 0.31}
+      - {x: -1.05, y: -0.31}
+      - {x: 1.05, y: -0.31}
+      - {x: 1.05, y: 0.31}
+--- !u!114 &-9097481182583493249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842607640937874620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a69077a709306489e0806d91fcef84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obsDamage: 1
