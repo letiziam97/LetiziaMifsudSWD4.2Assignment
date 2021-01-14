@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] float movingSpeed = 1f;
     [SerializeField] float pad = 1f;
 
+    [SerializeField] float health = 50f;
+
     void Start()
     {
         //Calling ViewPortToWordPoint() 
@@ -64,5 +66,26 @@ public class Player : MonoBehaviour
         this.transform.position = new Vector2(newPosX, movementY);
 
     }
-    
+
+    //reduces health whenever an obstacle collides with a gameObj
+    //and reduces its healh accordingly
+    private void OnTriggerEnter2D(Collider2D otherObj)
+    {
+        //accesses the damage dealer calss from other objects.
+        DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
+
+
+        ProHit(damageDeal);
+
+    }
+    //whenever this is called, send the damagedealer details
+    private void ProHit(DamageDealer damageDeal)
+    {
+        health -= damageDeal.GetDamage();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
