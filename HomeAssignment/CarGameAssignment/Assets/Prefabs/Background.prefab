@@ -92,4 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196b44d06d624b640bc9d5259a076439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 5
+  bkgdScrollSpeed: 1
+  bkgroundClip: {fileID: 8300000, guid: afc0c14c3ad0a3e4ea3cc1fb9b7a0cbc, type: 3}
+  bkgroundClipVol: 0.33

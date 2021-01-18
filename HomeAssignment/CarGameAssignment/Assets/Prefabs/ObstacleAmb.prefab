@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1213689086927954675}
   - component: {fileID: 3510211083127757323}
   - component: {fileID: -2207913787812245484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ObstacleAmb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,13 +97,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45dccc5454eff4ba99097d076269fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 0
   shotCnt: 0
   minTimeBetShots: 0.2
   maxTimeBetShots: 3
   obsLaserPre: {fileID: 840614914153625593, guid: 625b03343cdd7464ca60c1d827bcbf03,
     type: 3}
-  ObsLaserSpeed: 3
+  obsLaserSpeed: 3
+  deathVFX: {fileID: 8447649780677585359, guid: 810ee2fc45c19604c98b5c818e9e83ea,
+    type: 3}
+  explosionDur: 1
+  obsDeathSound: {fileID: 0}
+  obsDeathSoundVol: 0.75
 --- !u!114 &-1213689086927954675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,4 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a69077a709306489e0806d91fcef84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsDamage: 5
+  obsDamage: 50

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6046982477387316338}
   - component: {fileID: 7470312362121191700}
   - component: {fileID: -9097481182583493249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ObstacleBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,12 @@ MonoBehaviour:
   minTimeBetShots: 0.2
   maxTimeBetShots: 3
   obsLaserPre: {fileID: 0}
-  ObsLaserSpeed: 0.3
+  obsLaserSpeed: 3
+  deathVFX: {fileID: 8447649780677585359, guid: 810ee2fc45c19604c98b5c818e9e83ea,
+    type: 3}
+  explosionDur: 1
+  obsDeathSound: {fileID: 0}
+  obsDeathSoundVol: 0.75
 --- !u!60 &7470312362121191700
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -158,4 +163,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a69077a709306489e0806d91fcef84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsDamage: 1
+  obsDamage: 10

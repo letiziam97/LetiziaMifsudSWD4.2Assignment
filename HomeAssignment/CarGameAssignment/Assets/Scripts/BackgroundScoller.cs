@@ -6,6 +6,12 @@ public class BackgroundScoller : MonoBehaviour
 {
     [SerializeField] float bkgdScrollSpeed = 1f;
 
+
+    [SerializeField] AudioClip bkgroundClip;
+
+    [SerializeField] [Range(0, 1)] float bkgroundClipVol = 0.75f;  //sound between 0 and 1 > Volume 
+
+
     //the material from the texture
     Material myMaterial;
 
@@ -13,6 +19,9 @@ public class BackgroundScoller : MonoBehaviour
     Vector2 offSet;
     void Start()
     {
+        //Playing the sound in the background
+        AudioSource.PlayClipAtPoint(bkgroundClip, Camera.main.transform.position, bkgroundClipVol);
+
         //getting the material from the renderer component
         myMaterial = GetComponent<Renderer>().material;
 
@@ -23,7 +32,7 @@ public class BackgroundScoller : MonoBehaviour
     
     void Update()
     {
-        //move the mateiral by offset every frame
+        //move the material by offset every frame
         myMaterial.mainTextureOffset += offSet * Time.deltaTime;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] float health = 500f;
+    [SerializeField] float health;
     
     [SerializeField] float shotCnt;
 
@@ -14,7 +14,13 @@ public class Obstacle : MonoBehaviour
 
     [SerializeField] GameObject obsLaserPre; // set a diff prefab to one of each obs
 
-    [SerializeField] float ObsLaserSpeed = 3f; //speed for laster of obstacle
+    [SerializeField] float obsLaserSpeed = 3f; //speed for laster of obstacle
+
+    [SerializeField] GameObject deathVFX; //Death Visual Effects
+
+    [SerializeField] float explosionDur = 1f; // how long it will take for the exlopsion to be in the scene
+
+ 
 
     //Obstacles have no health and therefore when it hits the car, obstacle should be destroyed.
     //Has a DamageDealer components
@@ -23,6 +29,11 @@ public class Obstacle : MonoBehaviour
         //accesses the damage dealer calss from other objects.
         DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
 
+        //if there is no damageDeal in otherObj, end the method
+        if (!damageDeal) // damangeDeal == null
+        {
+            return; //it will end the method
+        }
 
         ProHit(damageDeal);
 
@@ -34,10 +45,24 @@ public class Obstacle : MonoBehaviour
         
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
+    private void Die()
+    {
+        //destory gameObject
+        Destroy(gameObject);
+        
+        //instantiate explosion effects
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+
+
+        //remove the exlopsion from the hierarchy after 1 sec
+        Destroy(explosion, explosionDur);
+        
+    }
 
     void Start()
     {
@@ -71,7 +96,7 @@ public class Obstacle : MonoBehaviour
         GameObject obsLaser = Instantiate(obsLaserPre, transform.position, Quaternion.identity) as GameObject;
 
         //shoot laser downwards
-        obsLaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -ObsLaserSpeed);
+        obsLaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -obsLaserSpeed);
     }
 
 

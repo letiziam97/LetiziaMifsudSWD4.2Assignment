@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5121164455830640657}
   - component: {fileID: 5121164455830640658}
   - component: {fileID: 5121164456893494843}
-  - component: {fileID: 3948327649207458242}
-  m_Layer: 0
+  - component: {fileID: -8167056945535043119}
+  m_Layer: 8
   m_Name: PlayerCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,10 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52b0505e57d00943aeb16838e86e823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
+  playerHealthRed: {fileID: 8300000, guid: 81d34c2ea79f2c44e9a9a0d63ed718fc, type: 3}
+  playerHealthRedVol: 0.75
   movingSpeed: 1
   pad: 1
-  health: 50
---- !u!60 &3948327649207458242
+--- !u!60 &-8167056945535043119
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,12 +125,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0942436, y: -0.1560635}
-      - {x: 0.05199659, y: -0.12789631}
-      - {x: -0.11427458, y: -0.1588071}
-      - {x: -0.24285497, y: -0.21174955}
-      - {x: -0.23699945, y: -1.1136259}
-      - {x: 0.22300053, y: -1.127896}
-      - {x: 0.28329158, y: -1.1371106}
-      - {x: 0.25, y: -1.1290331}
-      - {x: 0.2857253, y: -0.3823358}
+    - - {x: 0.22999999, y: 0.44}
+      - {x: 0.13, y: 0.5}
+      - {x: -0.14999999, y: 0.5}
+      - {x: -0.25, y: 0.39999998}
+      - {x: -0.25, y: -0.5}
+      - {x: 0.21, y: -0.5}
+      - {x: 0.22999999, y: -0.47}
+      - {x: 0.25, y: -0.22999999}
+      - {x: 0.25, y: 0.29999998}

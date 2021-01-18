@@ -8,14 +8,22 @@ using UnityEngine.XR.WSA.Input;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float health = 50f;
+
+    [SerializeField] AudioClip playerHealthRed;
+
+    [SerializeField] [Range(0, 1)] float playerHealthRedVol = 0.75f;  //sound between 0 and 1 > Volume 
+
+    [SerializeField] AudioClip obstacleAvoided;
+
+    [SerializeField] [Range(0, 1)] float obstacleAvoidedVol = 0.50f;
+
     //creating variable without intialisation
-    float MinX, MaxX, MinY, MaxY;
+    float MinX, MaxX;
 
     //This is a variable that can be edited from Unity
     [SerializeField] float movingSpeed = 1f;
     [SerializeField] float pad = 1f;
-
-    [SerializeField] float health = 50f;
 
     void Start()
     {
@@ -30,6 +38,40 @@ public class Player : MonoBehaviour
         Move();
     }
 
+  
+    //reduces health whenever an obstacle collides with a gameObj
+    //and reduces its healh accordingly
+
+    private void OnTriggerEnter2D(Collider2D otherObj)
+    {
+        //accesses the damage dealer calss from other objects.
+        DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
+
+        //if there is no damageDeal in otherObj, end the method
+        if (!damageDeal) // damangeDeal == null
+        {
+            return; //it will end the method
+        }
+
+        ProHit(damageDeal);
+
+    }
+
+    private void ProHit(DamageDealer damageDeal)
+    {
+        health -= damageDeal.GetDamage();
+
+        if (health <= 0)
+        {
+            //Playing the sound as soon as the player dies
+            AudioSource.PlayClipAtPoint(playerHealthRed, Camera.main.transform.position, playerHealthRedVol);
+
+            Destroy(gameObject);
+        }
+
+    }
+
+
     //Generated the method for the ViewPortToWordPoint() - setting up the boundaries according to the camera
     private void SetUpMoveBoundaries()
     {
@@ -42,8 +84,7 @@ public class Player : MonoBehaviour
         MaxX = boundCam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - pad;
 
         //yMin = 0, yMax = 0
-        MinY = boundCam.ViewportToWorldPoint(new Vector3(0, -4 , 0)).y + pad;
-        MaxY = boundCam.ViewportToWorldPoint(new Vector3(0, -4, 0)).y - pad;
+
 
     }
 
@@ -65,27 +106,5 @@ public class Player : MonoBehaviour
         //Update the position of the player
         this.transform.position = new Vector2(newPosX, movementY);
 
-    }
-
-    //reduces health whenever an obstacle collides with a gameObj
-    //and reduces its healh accordingly
-    private void OnTriggerEnter2D(Collider2D otherObj)
-    {
-        //accesses the damage dealer calss from other objects.
-        DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
-
-
-        ProHit(damageDeal);
-
-    }
-    //whenever this is called, send the damagedealer details
-    private void ProHit(DamageDealer damageDeal)
-    {
-        health -= damageDeal.GetDamage();
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }
