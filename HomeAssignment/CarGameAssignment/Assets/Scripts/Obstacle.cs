@@ -29,6 +29,7 @@ public class Obstacle : MonoBehaviour
         //accesses the damage dealer calss from other objects.
         DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
 
+
         //if there is no damageDeal in otherObj, end the method
         if (!damageDeal) // damangeDeal == null
         {
@@ -53,14 +54,14 @@ public class Obstacle : MonoBehaviour
     {
         //destory gameObject
         Destroy(gameObject);
-        
+
         //instantiate explosion effects
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
 
-
-
         //remove the exlopsion from the hierarchy after 1 sec
         Destroy(explosion, explosionDur);
+
+    
         
     }
 

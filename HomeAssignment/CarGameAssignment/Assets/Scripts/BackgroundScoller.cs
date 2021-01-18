@@ -7,9 +7,9 @@ public class BackgroundScoller : MonoBehaviour
     [SerializeField] float bkgdScrollSpeed = 1f;
 
 
-    [SerializeField] AudioClip bkgroundClip;
+    [SerializeField] AudioClip backgroundClip;
 
-    [SerializeField] [Range(0, 1)] float bkgroundClipVol = 0.75f;  //sound between 0 and 1 > Volume 
+    [SerializeField] [Range(0, 1)] float backgroundClipVol = 0.75f;  //sound between 0 and 1 > Volume 
 
 
     //the material from the texture
@@ -20,7 +20,7 @@ public class BackgroundScoller : MonoBehaviour
     void Start()
     {
         //Playing the sound in the background
-        AudioSource.PlayClipAtPoint(bkgroundClip, Camera.main.transform.position, bkgroundClipVol);
+        AudioSource.PlayClipAtPoint(backgroundClip, Camera.main.transform.position, backgroundClipVol);
 
         //getting the material from the renderer component
         myMaterial = GetComponent<Renderer>().material;

@@ -10,8 +10,6 @@ public class ObstacleSpawner : MonoBehaviour
     //controls the looping of the waves
     [SerializeField] bool looping = false;
     
-    //Wave 0 
-    int startWave = 0; 
 
     IEnumerator Start()
     {
@@ -22,11 +20,6 @@ public class ObstacleSpawner : MonoBehaviour
         }
         while (looping); //while true
 
-    }
-
-    void Update()
-    {
-        
     }
 
     //Co-routine - being specific to spawn all enemies in waves

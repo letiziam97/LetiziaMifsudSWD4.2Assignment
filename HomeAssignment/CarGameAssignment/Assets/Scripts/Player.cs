@@ -14,9 +14,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] [Range(0, 1)] float playerHealthRedVol = 0.75f;  //sound between 0 and 1 > Volume 
 
+    [SerializeField] public static int pts = 0;
+
     [SerializeField] AudioClip obstacleAvoided;
 
     [SerializeField] [Range(0, 1)] float obstacleAvoidedVol = 0.50f;
+
+
+
 
     //creating variable without intialisation
     float MinX, MaxX;
@@ -38,21 +43,14 @@ public class Player : MonoBehaviour
         Move();
     }
 
-  
-    //reduces health whenever an obstacle collides with a gameObj
+
+    //reduces health whenever the player collides with a gameObj
     //and reduces its healh accordingly
 
     private void OnTriggerEnter2D(Collider2D otherObj)
     {
         //accesses the damage dealer calss from other objects.
         DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
-
-        //if there is no damageDeal in otherObj, end the method
-        if (!damageDeal) // damangeDeal == null
-        {
-            return; //it will end the method
-        }
-
         ProHit(damageDeal);
 
     }
@@ -60,13 +58,25 @@ public class Player : MonoBehaviour
     private void ProHit(DamageDealer damageDeal)
     {
         health -= damageDeal.GetDamage();
+        damageDeal.Hit();
 
+        //Playing the sound as soon as the player dies
+        AudioSource.PlayClipAtPoint(playerHealthRed, Camera.main.transform.position, playerHealthRedVol);
+       
         if (health <= 0)
         {
-            //Playing the sound as soon as the player dies
-            AudioSource.PlayClipAtPoint(playerHealthRed, Camera.main.transform.position, playerHealthRedVol);
-
             Destroy(gameObject);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider target)
+    {
+        if (target.gameObject.tag.Equals("laser") == false)
+        {
+            //audio of player gaining points 
+            AudioSource.PlayClipAtPoint(obstacleAvoided, Camera.main.transform.position, obstacleAvoidedVol);
+            Player.pts += 5;
         }
 
     }
@@ -82,9 +92,6 @@ public class Player : MonoBehaviour
         //xMin = 0, xMax = 1
         MinX = boundCam.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + pad;
         MaxX = boundCam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - pad;
-
-        //yMin = 0, yMax = 0
-
 
     }
 
