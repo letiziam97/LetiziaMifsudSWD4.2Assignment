@@ -22,10 +22,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] float explosionDur = 1f; // how long it will take for the exlopsion to be in the scene
 
-   // [SerializeField] public static int pts = 5;
-
-    //[SerializeField] int scoreVal = 5;
-
+    public GameSession gamesess;
 
 
     //creating variable without intialisation
@@ -46,6 +43,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Score();
     }
 
 
@@ -91,11 +89,15 @@ public class Player : MonoBehaviour
         {
             //audio of player gaining points 
             AudioSource.PlayClipAtPoint(obstacleAvoided, Camera.main.transform.position, obstacleAvoidedVol);
-
-           // Player.pts += 5;
         }
 
     }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
 
 
     //Generated the method for the ViewPortToWordPoint() - setting up the boundaries according to the camera
@@ -129,5 +131,20 @@ public class Player : MonoBehaviour
         //Update the position of the player
         this.transform.position = new Vector2(newPosX, movementY);
 
+    }
+
+    public void Score()
+    {
+        gamesess = FindObjectOfType<GameSession>();
+        int pointscore = gamesess.GetScore();
+
+        if ((health > 0) && (pointscore >= 100))
+        {
+            FindObjectOfType<Level>().LoadWinner();
+        }
+        else
+        {
+            FindObjectOfType<Level>().LoadGameOver();
+        }
     }
 }

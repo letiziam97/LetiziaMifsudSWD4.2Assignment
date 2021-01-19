@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreDisplay : MonoBehaviour
+public class Health : MonoBehaviour
 {
     //updates the Text in UI
-    Text PlayerHealthTxt;
-    Player player;
+    Text TextPlayerHealth;
+    Player pl;
 
-    
+
     void Start()
     {
-        PlayerHealthTxt = GetComponent<Text>();
-        player = FindObjectOfType<Player>();
+        TextPlayerHealth = GetComponent<Text>();
+        pl = FindObjectOfType<Player>();
     }
 
     void Update()
     {
         //to display score in the canvas, from int to string.
-        PlayerHealthTxt.text = player.GetHealth().ToString();    
+        TextPlayerHealth.text = pl.GetHealth().ToString();
     }
 
 }
