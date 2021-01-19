@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bkgdScrollSpeed: 1
-  backgroundClip: {fileID: 0}
+  backgroundClip: {fileID: 8300000, guid: afc0c14c3ad0a3e4ea3cc1fb9b7a0cbc, type: 3}
   backgroundClipVol: 0.75
 --- !u!1 &2095289953
 GameObject:

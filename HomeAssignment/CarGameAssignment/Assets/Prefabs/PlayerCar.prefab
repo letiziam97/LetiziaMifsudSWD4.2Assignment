@@ -97,9 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   playerHealthRed: {fileID: 8300000, guid: 81d34c2ea79f2c44e9a9a0d63ed718fc, type: 3}
-  playerHealthRedVol: 0.75
+  playerHealthRedVol: 1
   obstacleAvoided: {fileID: 8300000, guid: 9f37124cafde1d94b90fb1ee45e7b67f, type: 3}
-  obstacleAvoidedVol: 0.5
+  obstacleAvoidedVol: 1
   movingSpeed: 1
   pad: 1
 --- !u!60 &-8167056945535043119

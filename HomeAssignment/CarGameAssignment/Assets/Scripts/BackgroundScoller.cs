@@ -6,7 +6,6 @@ public class BackgroundScoller : MonoBehaviour
 {
     [SerializeField] float bkgdScrollSpeed = 1f;
 
-
     [SerializeField] AudioClip backgroundClip;
 
     [SerializeField] [Range(0, 1)] float backgroundClipVol = 0.75f;  //sound between 0 and 1 > Volume 

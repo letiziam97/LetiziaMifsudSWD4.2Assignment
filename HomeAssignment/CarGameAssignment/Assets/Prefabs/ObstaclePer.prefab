@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a69077a709306489e0806d91fcef84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsDamage: 40
+  obsDamage: 10
 --- !u!50 &-6422600182899944038
 Rigidbody2D:
   serializedVersion: 4

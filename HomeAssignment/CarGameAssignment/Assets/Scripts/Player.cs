@@ -65,7 +65,11 @@ public class Player : MonoBehaviour
        
         if (health <= 0)
         {
+            //destriy player
             Destroy(gameObject);
+
+            //find object of type level in hierarcgy and run its method LoadGameOver()
+            FindObjectOfType<Level>().LoadGameOver();
         }
 
     }

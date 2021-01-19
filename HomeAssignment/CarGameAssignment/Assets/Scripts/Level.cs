@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
+
+    [SerializeField] float delayInSec = 2f;
+
+    IEnumerator WaL()
+    {
+        yield return new WaitForSeconds(delayInSec);
+        //loads the scene with name GameOver
+        SceneManager.LoadScene("GameOver");
+    }
     public void LoadStartMenu()
     {
         //loads the first scene in the project that is StartMenu 
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene(0);
     }
 
     public void LoadGame()
@@ -19,10 +28,14 @@ public class Level : MonoBehaviour
 
     public void LoadGameOver()
     {
-        //loads the scene with name GameOver
-        SceneManager.LoadScene("GameOver");
-    }    
+        StartCoroutine(WaL());
+    }
 
+    public void LoadWinner()
+    {
+        //loads the scene with name GameOver
+        SceneManager.LoadScene("Winner");
+    }
     public void QuitGame()
     {
         Application.Quit();
