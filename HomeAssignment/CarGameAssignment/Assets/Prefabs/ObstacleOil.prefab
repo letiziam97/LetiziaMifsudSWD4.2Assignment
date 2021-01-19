@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obsWaypoints: []
-  waveconf: {fileID: 0}
+  waveconf: {fileID: 11400000, guid: 309a2e38c66cb0f40a4745eeaec80509, type: 2}
 --- !u!114 &-4424371454610331025
 MonoBehaviour:
   m_ObjectHideFlags: 0

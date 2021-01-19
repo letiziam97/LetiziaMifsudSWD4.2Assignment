@@ -14,12 +14,17 @@ public class Player : MonoBehaviour
 
     [SerializeField] [Range(0, 1)] float playerHealthRedVol = 0.75f;  //sound between 0 and 1 > Volume 
 
-    [SerializeField] public static int pts = 0;
-
     [SerializeField] AudioClip obstacleAvoided;
 
     [SerializeField] [Range(0, 1)] float obstacleAvoidedVol = 0.50f;
 
+    [SerializeField] GameObject deathVFX; //Death Visual Effects
+
+    [SerializeField] float explosionDur = 1f; // how long it will take for the exlopsion to be in the scene
+
+   // [SerializeField] public static int pts = 5;
+
+    //[SerializeField] int scoreVal = 5;
 
 
 
@@ -65,10 +70,16 @@ public class Player : MonoBehaviour
        
         if (health <= 0)
         {
-            //destriy player
+            //instantiate explosion effects
+            GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+            //remove the exlopsion from the hierarchy after 1 sec
+            Destroy(explosion, explosionDur);
+
+            //destroy player
             Destroy(gameObject);
 
-            //find object of type level in hierarcgy and run its method LoadGameOver()
+            //find object of type level in hierarchy and run its method LoadGameOver()
             FindObjectOfType<Level>().LoadGameOver();
         }
 
@@ -80,7 +91,8 @@ public class Player : MonoBehaviour
         {
             //audio of player gaining points 
             AudioSource.PlayClipAtPoint(obstacleAvoided, Camera.main.transform.position, obstacleAvoidedVol);
-            Player.pts += 5;
+
+           // Player.pts += 5;
         }
 
     }

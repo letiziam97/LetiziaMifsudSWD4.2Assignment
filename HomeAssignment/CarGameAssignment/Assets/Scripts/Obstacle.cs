@@ -26,19 +26,20 @@ public class Obstacle : MonoBehaviour
     //Has a DamageDealer components
     private void OnTriggerEnter2D(Collider2D otherObj)
     {
+
+
         //accesses the damage dealer calss from other objects.
         DamageDealer damageDeal = otherObj.gameObject.GetComponent<DamageDealer>();
 
+        //instantiate explosion effects
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
 
-        //if there is no damageDeal in otherObj, end the method
-        if (!damageDeal) // damangeDeal == null
-        {
-            return; //it will end the method
-        }
+        //remove the exlopsion from the hierarchy after 1 sec
+        Destroy(explosion, explosionDur);
 
-        ProHit(damageDeal);
-
+        Die();
     }
+
 
     private void ProHit(DamageDealer damageDeal)
     {
@@ -55,14 +56,6 @@ public class Obstacle : MonoBehaviour
         //destory gameObject
         Destroy(gameObject);
 
-        //instantiate explosion effects
-        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
-
-        //remove the exlopsion from the hierarchy after 1 sec
-        Destroy(explosion, explosionDur);
-
-    
-        
     }
 
     void Start()

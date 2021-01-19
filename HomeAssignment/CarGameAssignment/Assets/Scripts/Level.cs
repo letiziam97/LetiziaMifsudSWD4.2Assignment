@@ -14,6 +14,12 @@ public class Level : MonoBehaviour
         //loads the scene with name GameOver
         SceneManager.LoadScene("GameOver");
     }
+
+    IEnumerator WaLWin()
+    {
+        yield return new WaitForSeconds(delayInSec);
+        SceneManager.LoadScene("Winner");
+    }
     public void LoadStartMenu()
     {
         //loads the first scene in the project that is StartMenu 
@@ -24,6 +30,9 @@ public class Level : MonoBehaviour
     {
         //loads CarGame Scene
         SceneManager.LoadScene("CarGame");
+
+        //reset the GameSession from the beginning
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadGameOver()
@@ -33,8 +42,8 @@ public class Level : MonoBehaviour
 
     public void LoadWinner()
     {
-        //loads the scene with name GameOver
-        SceneManager.LoadScene("Winner");
+        //loads the scene with name Winner
+        StartCoroutine(WaLWin());
     }
     public void QuitGame()
     {

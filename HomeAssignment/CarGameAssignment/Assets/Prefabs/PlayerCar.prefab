@@ -95,11 +95,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52b0505e57d00943aeb16838e86e823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 5000
   playerHealthRed: {fileID: 8300000, guid: 81d34c2ea79f2c44e9a9a0d63ed718fc, type: 3}
   playerHealthRedVol: 1
   obstacleAvoided: {fileID: 8300000, guid: 9f37124cafde1d94b90fb1ee45e7b67f, type: 3}
   obstacleAvoidedVol: 1
+  deathVFX: {fileID: 8565754737612821015, guid: 7c3b7818fe540c840b4ca7eb676c162b,
+    type: 3}
+  explosionDur: 1
   movingSpeed: 1
   pad: 1
 --- !u!60 &-8167056945535043119
