@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
 
-    [SerializeField] float delayInSec = 2f;
+    [SerializeField] float delayInSec = 2f;  
+    [SerializeField] float delayInSecond = 0.5f;
 
     IEnumerator WaL()
     {
@@ -17,8 +18,9 @@ public class Level : MonoBehaviour
 
     IEnumerator WaLWin()
     {
-        yield return new WaitForSeconds(delayInSec);
-        SceneManager.LoadScene("Winner");
+        yield return new WaitForSeconds(delayInSecond);
+        //loads the scene with name Winner
+        SceneManager.LoadScene("WinnerGame");
     }
     public void LoadStartMenu()
     {
@@ -42,7 +44,7 @@ public class Level : MonoBehaviour
 
     public void LoadWinner()
     {
-        //loads the scene with name Winner
+        //loads the co routine
         StartCoroutine(WaLWin());
     }
     public void QuitGame()

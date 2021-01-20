@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
 
     public GameSession gamesess;
 
-
     //creating variable without intialisation
     float MinX, MaxX;
 
@@ -39,13 +38,11 @@ public class Player : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
         Score();
     }
-
 
     //reduces health whenever the player collides with a gameObj
     //and reduces its healh accordingly
@@ -90,15 +87,12 @@ public class Player : MonoBehaviour
             //audio of player gaining points 
             AudioSource.PlayClipAtPoint(obstacleAvoided, Camera.main.transform.position, obstacleAvoidedVol);
         }
-
     }
 
     public float GetHealth()
     {
         return health;
     }
-
-
 
     //Generated the method for the ViewPortToWordPoint() - setting up the boundaries according to the camera
     private void SetUpMoveBoundaries()
@@ -141,10 +135,6 @@ public class Player : MonoBehaviour
         if ((health > 0) && (pointscore >= 100))
         {
             FindObjectOfType<Level>().LoadWinner();
-        }
-        else
-        {
-            FindObjectOfType<Level>().LoadGameOver();
         }
     }
 }

@@ -26,8 +26,4 @@ public class Music : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
 }

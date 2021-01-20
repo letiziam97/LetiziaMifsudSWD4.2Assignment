@@ -55,11 +55,6 @@ public class WaveConfig : ScriptableObject
     void Start()
     {
         GetObsPrefab();
-
     }
 
-    void Update()
-    {
-        
-    }
 }

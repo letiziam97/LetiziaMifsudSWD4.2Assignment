@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6152857030669652067}
   - component: {fileID: 928551955301106944}
   - component: {fileID: -1680771744958463426}
-  - component: {fileID: -4424371454610331025}
   - component: {fileID: -7930844736352118794}
   - component: {fileID: -7029406521618001416}
   - component: {fileID: 5092589977441419063}
+  - component: {fileID: -3363611139961495459}
   m_Layer: 9
   m_Name: ObstacleOil
   m_TagString: Untagged
@@ -100,27 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obsWaypoints: []
   waveconf: {fileID: 11400000, guid: 309a2e38c66cb0f40a4745eeaec80509, type: 2}
---- !u!114 &-4424371454610331025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5995339476128769886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a45dccc5454eff4ba99097d076269fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  shotCnt: 0
-  minTimeBetShots: 0.2
-  maxTimeBetShots: 3
-  obsLaserPre: {fileID: 0}
-  obsLaserSpeed: 3
-  deathVFX: {fileID: 8565754737612821015, guid: 7c3b7818fe540c840b4ca7eb676c162b,
-    type: 3}
-  explosionDur: 1
 --- !u!114 &-7930844736352118794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +160,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3363611139961495459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5995339476128769886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b350534f8857a2645b3997c08d683b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  deathVFX: {fileID: 8565754737612821015, guid: 7c3b7818fe540c840b4ca7eb676c162b,
+    type: 3}
+  explosionDur: 1

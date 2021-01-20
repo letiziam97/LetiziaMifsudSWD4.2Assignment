@@ -8,15 +8,14 @@ public class ObjectDestory : MonoBehaviour
     [SerializeField] AudioClip obsAvoided;
     [SerializeField] [Range(0, 1)] float obsAvoidedVol = 0.5f;
 
-    private void OnTriggerEnter2D(Collider2D otherobj)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //audio when obs touch other shredder
         AudioSource.PlayClipAtPoint(obsAvoided, Camera.main.transform.position, obsAvoidedVol);
 
-        //adding to score ie pts 
+        //adding 5 pts to pts ie score 
         FindObjectOfType<GameSession>().AddToScore(pts);
 
     }
-
 
 }

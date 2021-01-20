@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Music.cs" />
     <Compile Include="Assets\Scripts\ObjectDestory.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\ObstacleS.cs" />
     <Compile Include="Assets\Scripts\ObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\ObstaclesPathing.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
