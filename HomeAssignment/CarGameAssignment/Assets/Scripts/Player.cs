@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.XR.WSA.Input;
 
 public class Player : MonoBehaviour
 {
